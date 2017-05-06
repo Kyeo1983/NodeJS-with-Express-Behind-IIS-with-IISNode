@@ -89,7 +89,7 @@ function here for the validity of the user. Then simply call done with or withou
       ```
       
 
-9. Then define a serialization method for the passport’s session.
+9. Then define a serialization method for the passport’s session.  
    ```javascript
    passport.serializeUser(function(user, done) { done(null, user); });
    passport.deserializeUser(function(user, done) { done(null, user); });
@@ -97,7 +97,7 @@ function here for the validity of the user. Then simply call done with or withou
    ```
 
 
-10. Lastly, we instantiate the middleware to require Authentication from here on.
+10. Lastly, we instantiate the middleware to require Authentication from here on.  
    ```javascript
    app.use(passport.authenticate('WindowsAuthentication'));
    ```
@@ -106,3 +106,16 @@ function here for the validity of the user. Then simply call done with or withou
 11. Notice that we do not need to launch **cmd>>node server.js**.  
 In this case, IIS is managing that for us. Read IISNode’s original documentation to understand what other effects
 arise from this setup.
+
+12. Next we test Securing by Authentication and Authorization.
+   * Go to IIS, the usual Authentication section
+      <img height="143px" width="383px" src="https://github.com/Kyeo1983/NodeJS-with-Express-Behind-IIS-with-IISNode/blob/master/readmeImg/Snap18.png"/>
+   
+   * Set Windows Authentication to Enabled, and Disable Anonymous Authentication  
+      <img height="200px" width="467px" src="https://github.com/Kyeo1983/NodeJS-with-Express-Behind-IIS-with-IISNode/blob/master/readmeImg/Snap19.png"/>
+
+   * Go to Authorization (what’s new…)  
+      <img height="129px" width="325px" src="https://github.com/Kyeo1983/NodeJS-with-Express-Behind-IIS-with-IISNode/blob/master/readmeImg/Snap20.png"/>
+      
+   * Set Authorization to somebody else to test  
+      <img height="126px" width="320px" src="https://github.com/Kyeo1983/NodeJS-with-Express-Behind-IIS-with-IISNode/blob/master/readmeImg/Snap21.png"/>
