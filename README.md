@@ -15,9 +15,10 @@ Then start it up.
 3. Create a web.config on the directory with these settings.
 <img height="195px" width="194px" src="https://github.com/Kyeo1983/NodeJS-with-Express-Behind-IIS-with-IISNode/blob/master/readmeImg/Snap11.png"/>
 
-  a. __handlers__ will indicate to IIS that this is a NodeJS application, and which .js file is the runtime. Therefore when opening this .js file from browser will not trigger a download and will instead run NodeJs.
-  b. __iisnode__ contains configurations specific to your instance. Refer to the author’s site for more information. But 1 thing to note that I encountered, somehow the application fails to run if nodeProcessCommandLine option is used.
-  c. __defaultDocument__ is set to NodeJS server .js file so that it is still launched at root path.
-  d. __rewrite__ will enforce all paths at this website to be ran through NodeJS instance.
+  * __handlers__ will indicate to IIS that this is a NodeJS application, and which .js file is the runtime. Therefore when opening this .js file from browser will not trigger a download and will instead run NodeJs.
+  * __iisnode__ contains configurations specific to your instance. Refer to the author’s site for more information. But 1 thing to note that I encountered, somehow the application fails to run if nodeProcessCommandLine option is used.
+  * __defaultDocument__ is set to NodeJS server .js file so that it is still launched at root path.
+  * __rewrite__ will enforce all paths at this website to be ran through NodeJS instance.
 
-4. 
+4. Navigate to http://<server>:3000/node/express
+The index.html loads up.
