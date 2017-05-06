@@ -20,4 +20,4 @@ Then start it up.
   * __defaultDocument__ is set to NodeJS server .js file so that it is still launched at root path.
   * __rewrite__ will enforce all paths at this website to be ran through NodeJS instance.
 
-4. Navigate to __http://<server>:3000/node/express__. The index.html loads up.
+4. Navigate to __http://server:3000/node/express__. The index.html loads up.
