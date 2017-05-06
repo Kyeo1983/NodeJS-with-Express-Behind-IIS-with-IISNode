@@ -30,12 +30,15 @@ The key utilities to be used here are [IISNode](https://github.com/tjanczuk/iisn
    **This is an after‐effect of using ExpressJS along with IISNode.**
 
 
+
 5. Click on the button, it fires an AJAX GET to /node/express/api/test.  
    It returns the logged on username, in this case “yeowh”.  
    <img height="117px" width="354px" src="https://github.com/Kyeo1983/NodeJS-with-Express-Behind-IIS-with-IISNode/blob/master/readmeImg/Snap25.png"/>
 
+
 6. Static files are still accessible from root path like /img/test.jpg.  
    <img height="296px" width="341px" src="https://github.com/Kyeo1983/NodeJS-with-Express-Behind-IIS-with-IISNode/blob/master/readmeImg/Snap17.png"/>
+
 
 7. What is required to be done on NodeJS to support these?  
    * route for the root site is still defined as usual, so static files can still be accessed from the root path.  
@@ -50,7 +53,18 @@ The key utilities to be used here are [IISNode](https://github.com/tjanczuk/iisn
    
 8. Prior to the routes definitions, we need to define the passport strategy to use. In this case, it is Windows Authentication.
    * Include the packages  
-   ```javascript
-   var passport = require('passport');
-   var WindowsStrategy = require('passport‐windowsauth');
-   ```
+      ```javascript
+      var passport = require('passport');
+      var WindowsStrategy = require('passport‐windowsauth');
+      ```
+   * Then define the WindowsStrategy by providing 2 parameters: __options__, __verify__.  
+   For __options__ here, I simply set it to __“integrated: true”__. Check out the author’s site for more options.  
+   For __verify__, it is a function that takes in a profile object and a done callback. You can implement your own verification
+function here for the validity of the user. Then simply call done with or without errors, err.
+      ```javascript
+      passport.use(new WindowsStrategy({ integrated: true }, function(profile, done){
+	      if (profile.id) console.log("logged in: " + profile.id);
+	      else var err = "No user defined.";
+        done(err, profile.id);
+      }));
+      ```
