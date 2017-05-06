@@ -64,6 +64,7 @@ The key utilities to be used here are [IISNode](https://github.com/tjanczuk/iisn
       });
       ```
    
+
 8. Prior to the routes definitions, we need to define the passport strategy to use. In this case, it is Windows Authentication.
    * Include the packages  
       ```javascript
@@ -81,3 +82,16 @@ function here for the validity of the user. Then simply call done with or withou
         done(err, profile.id);
       }));
       ```
+
+   * Lastly, initialize the passport.  
+      ```javascript
+      app.use(passport.initialize());
+      ```
+      
+
+9. Then define a serialization method for the passport’s session.
+   ```javascript
+   passport.serializeUser(function(user, done) { done(null, user); });
+   passport.deserializeUser(function(user, done) { done(null, user); });
+   app.use(passport.session());
+   ```
