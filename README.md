@@ -53,7 +53,7 @@ The key utilities to be used here are [IISNode](https://github.com/tjanczuk/iisn
    In this example, my API returns the logged on username retrieved from IIS. More descriptions below on how the username is obtained.
       ```javascript
       app.get('/node/express/api/test', function(req, res) {
-	res.json(req.user);
+      	res.json(req.user);
       });
       ```
    
