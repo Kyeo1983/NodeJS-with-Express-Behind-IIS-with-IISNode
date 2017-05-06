@@ -95,3 +95,14 @@ function here for the validity of the user. Then simply call done with or withou
    passport.deserializeUser(function(user, done) { done(null, user); });
    app.use(passport.session());
    ```
+
+
+10. Lastly, we instantiate the middleware to require Authentication from here on.
+   ```javascript
+   app.use(passport.authenticate('WindowsAuthentication'));
+   ```
+
+
+11. Notice that we do not need to launch **cmd>>node server.js**.  
+In this case, IIS is managing that for us. Read IISNode’s original documentation to understand what other effects
+arise from this setup.
