@@ -42,14 +42,27 @@ The key utilities to be used here are [IISNode](https://github.com/tjanczuk/iisn
 
 7. What is required to be done on NodeJS to support these?  
    * route for the root site is still defined as usual, so static files can still be accessed from the root path.  
-      <img height="86px" width="427px" src="https://github.com/Kyeo1983/NodeJS-with-Express-Behind-IIS-with-IISNode/blob/master/readmeImg/Snap27.png"/>
+      ```javascript
+      app.get('/', function(req, res) {
+      	res.sendFile(__dirname +  "/index.html");
+      });
+      app.use(express.static(__dirname + '/'));
+      ```
    
    * routes for api calls has to precede with /node/express.  
    In this example, my API returns the logged on username retrieved from IIS. More descriptions below on how the username is obtained.
-      <img height="57px" width="471px" src="https://github.com/Kyeo1983/NodeJS-with-Express-Behind-IIS-with-IISNode/blob/master/readmeImg/Snap28.png"/>
+      ```javascript
+      app.get('/node/express/api/test', function(req, res) {
+	res.json(req.user);
+      });
+      ```
    
    * set listening port to process.env.PORT, which is actually the port that IIS is binding this website to.
-      <img height="59px" width="569px" src="https://github.com/Kyeo1983/NodeJS-with-Express-Behind-IIS-with-IISNode/blob/master/readmeImg/Snap29.png"/>
+      ```javascript
+      app.listen(process.env.PORT,function(){
+      	console.log("Working on port " + process.env.PORT);
+      });
+      ```
    
 8. Prior to the routes definitions, we need to define the passport strategy to use. In this case, it is Windows Authentication.
    * Include the packages  
