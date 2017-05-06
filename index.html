@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>NodeExpress</title>
+  </head>
+  <body>
+	<h1>Default index.html Page</h1>
+	<button id="b">Click</button>
+	<div id="result"></div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+  jQuery(document).ready(function() {
+	jQuery('#b').click(function(){
+		jQuery.ajax({
+			url: '/node/express/api/test',
+			method: 'GET',
+			statusCode: {
+				200: function(data) { jQuery('#result').text(JSON.stringify(data)); },
+				401: function() {jQuery('#result').text('Unauthorized'); }
+				}
+			});
+	});
+  });
+  </script>
+</html>
