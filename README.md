@@ -107,8 +107,9 @@ function here for the validity of the user. Then simply call done with or withou
 In this case, IIS is managing that for us. Read IISNode’s original documentation to understand what other effects
 arise from this setup.
 
+
 12. Next we test Securing by Authentication and Authorization.
-   * Go to IIS, the usual Authentication section
+   * Go to IIS, the usual Authentication section  
       <img height="143px" width="383px" src="https://github.com/Kyeo1983/NodeJS-with-Express-Behind-IIS-with-IISNode/blob/master/readmeImg/Snap18.png"/>
    
    * Set Windows Authentication to Enabled, and Disable Anonymous Authentication  
@@ -119,3 +120,15 @@ arise from this setup.
       
    * Set Authorization to somebody else to test  
       <img height="126px" width="320px" src="https://github.com/Kyeo1983/NodeJS-with-Express-Behind-IIS-with-IISNode/blob/master/readmeImg/Snap21.png"/>
+
+
+13. Go back to the root site now, and we will get access denial.  
+Even the API GET call at /node/express/api/test will also encounter the same denial.  
+   <img height="174px" width="819px" src="https://github.com/Kyeo1983/NodeJS-with-Express-Behind-IIS-with-IISNode/blob/master/readmeImg/Snap23.png"/>
+   
+   
+14. For practicality, you may also want to hide node_modules from access through Request Filtering.  
+   <img height="282px" width="255px" src="https://github.com/Kyeo1983/NodeJS-with-Express-Behind-IIS-with-IISNode/blob/master/readmeImg/Snap30.png"/>
+
+
+15. That’s all to this guide. Please give me a **“like”** if this guide as helped you. Thank you!
