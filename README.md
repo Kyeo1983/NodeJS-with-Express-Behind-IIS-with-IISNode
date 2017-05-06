@@ -20,11 +20,13 @@ Then start it up.
   * __defaultDocument__ is set to NodeJS server .js file so that it is still launched at root path.
   * __rewrite__ will enforce all paths at this website to be ran through NodeJS instance.
 
+
 4. Navigate to __http://server:3000/node/express__. The index.html loads up.
 <img height="127px" width="396px" src="https://github.com/Kyeo1983/NodeJS-with-Express-Behind-IIS-with-IISNode/blob/master/readmeImg/Snap12.png"/>
 
-All the URLs has to be prefixed with /node/express now.
-**This is an after‐effect of using ExpressJS along with IISNode.**
+  All the URLs has to be prefixed with /node/express now.
+  **This is an after‐effect of using ExpressJS along with IISNode.**
+
 
 5. Click on the button, it fires an AJAX GET to /node/express/api/test. It returns the logged on username, in this case “yeowh”.
 <img height="117px" width="354px" src="https://github.com/Kyeo1983/NodeJS-with-Express-Behind-IIS-with-IISNode/blob/master/readmeImg/Snap25.png"/>
