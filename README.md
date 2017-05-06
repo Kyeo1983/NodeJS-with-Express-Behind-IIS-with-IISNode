@@ -128,7 +128,7 @@ Even the API GET call at /node/express/api/test will also encounter the same den
    
    
 14. For practicality, you may also want to hide node_modules from access through Request Filtering.  
-   <img height="249px" width="271px" src="https://github.com/Kyeo1983/NodeJS-with-Express-Behind-IIS-with-IISNode/blob/master/readmeImg/Snap30.png"/>
+   <img height="249px" width="271px" src="https://github.com/Kyeo1983/NodeJS-with-Express-Behind-IIS-with-IISNode/blob/master/readmeImg/Snap31.png"/>
 
 
 15. That’s all to this guide. Please give me a **“like”** if this guide has helped you. Thank you!
